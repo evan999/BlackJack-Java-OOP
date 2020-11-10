@@ -4,11 +4,18 @@ import java.util.Scanner;
 
 public class Player {
     private String name;
-    private Integer score;
+    private int score;
     private int bet;
     private int bank;
     private boolean bust = false;
     private boolean stand = false;
+
+    public Player(String name, int score, int bet, int bank){
+        this.name = name;
+        this.score = 0;
+        this.bet = 100;
+        this.bank = bank;
+    }
 
     public Card hit(){
         // Draw one card face up
