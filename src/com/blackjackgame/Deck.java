@@ -8,7 +8,7 @@ public class Deck {
     private List<Card> cardDeck;
     // TODO: Need unicode characters for SUITS
     //private final static String[] SUITS = {"\u3898", ""};
-    private final static String[] SUITS = {"DIAMOND", "HEARTS", "CLUBS", "SPADES"};
+    private final static String[] SUITS = {"DIAMONDS", "HEARTS", "CLUBS", "SPADES"};
     private final static int[] VALUES = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
 
     public Deck(){
@@ -32,6 +32,13 @@ public class Deck {
 
     public Card drawCard(){
         return cardDeck.remove(cardDeck.size() - 1);
+    }
+
+
+    public void displayDeck(){
+        for(var card : cardDeck){
+            System.out.println(card);
+        }
     }
 
 }
