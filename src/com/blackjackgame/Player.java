@@ -25,7 +25,12 @@ public class Player implements Actions {
         // Draw one card face up
         // Add card to hand.
         // Add to score
-        score += card.getValue();
+        hand.add(card);
+        int value = card.getValue();
+        if(value > 10){
+            value = 10;
+        }
+        score += value;
         if(score > 21){
             bust = true;
         }

@@ -36,9 +36,13 @@ public class Deck {
 
 
     public void displayDeck(){
-        for(var card : cardDeck){
-            System.out.println(card);
+        for(Card card : cardDeck){
+            System.out.println(card.toString());
         }
     }
 
+    @Override
+    public String toString() {
+        return "Deck = " + cardDeck.toString();
+    }
 }

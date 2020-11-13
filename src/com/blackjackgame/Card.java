@@ -14,10 +14,13 @@ public class Card {
         switch(faceValue){
             case 1:
                 output = "ACE";
+                break;
             case 11:
                 output = "JACK";
+                break;
             case 12:
                 output = "QUEEN";
+                break;
             case 13:
                 output = "KING";
                 break;
@@ -29,6 +32,10 @@ public class Card {
 
     public int getValue(){
         return faceValue;
+    }
+
+    public String getSuit(){
+        return suit;
     }
 
 
