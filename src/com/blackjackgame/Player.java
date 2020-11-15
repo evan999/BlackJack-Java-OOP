@@ -1,6 +1,7 @@
 package com.blackjackgame;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -84,9 +85,25 @@ public class Player implements Actions {
         }
     }
 
-    public void addWinnings(){
-
+    public void reset(){
+        score = 0;
+        hand = Collections.emptyList();
     }
 
+    public int getScore(){
+        return score;
+    }
+
+    public int addWinnings(){
+        return bank + (bet*2);
+    }
+
+    public int getBank(){
+        return bank;
+    }
+
+    public int getBet(){
+        return bet;
+    }
 
 }
