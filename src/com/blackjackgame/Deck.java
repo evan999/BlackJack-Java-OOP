@@ -45,4 +45,16 @@ public class Deck {
     public String toString() {
         return "Deck = " + cardDeck.toString();
     }
+
+    public void addCard(Card card){
+        cardDeck.add(card);
+    }
+
+    public Card removeCard(int position){
+        return cardDeck.remove(position);
+    }
+
+    public void getCard(int position){
+        cardDeck.get(position);
+    }
 }

@@ -7,18 +7,18 @@ import java.util.Scanner;
 
 public class Player implements Actions {
     private String name;
-    private int score;
+    //private int score;
     private int bet;
     private int bank;
-    private List<Card> hand;
+//    private List<Card> hand;
     private boolean bust = false;
     private boolean stand = false;
 
     public Player(String name, int score, int bet, int bank){
         this.name = name;
-        this.score = 0;
+        //this.score = 0;
         this.bet = 100;
-        this.hand = new ArrayList<>();
+        //this.hand = new ArrayList<>();
         this.bank = bank;
     }
 

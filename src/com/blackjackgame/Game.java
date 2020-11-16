@@ -24,6 +24,12 @@ public class Game {
 
     public void deal(){
         int score;
+
+        if(player.getBank() == 0){
+            System.out.println("Sorry, you need a bet of at least 100 to start a new game");
+            System.exit(0);
+        }
+
         while(!(playerBust || dealerBust)){
 
             String action = Console.getPlayerChoice();
@@ -38,11 +44,11 @@ public class Game {
                 break;
             }
 
-            if(player.getScore() > 21){
+            if(player.getScore() > BLACKJACK){
                 System.out.println("PLAYER BUST! Player loses bet of " + player.getBet());
             }
-            else if(dealer.getScore() > 21){
-                System.out.println("DEALER BUSTS! Player gets bet of " + player.addWinnings());
+            else if(dealer.getScore() > BLACKJACK){
+                System.out.println("DEALER BUSTS! Player wins " + player.addWinnings());
             }
         }
     }
@@ -57,7 +63,7 @@ public class Game {
     }
 
     public int push(){
-        // If player and dealer tie hands (and do not bust)
+        // If player and dealer tie hands (and do not bust), return player's bet
         return player.getBank() + player.getBet();
     }
 
@@ -78,6 +84,7 @@ public class Game {
             player.addWinnings();
         }
         else if(dealerScore > playerScore){
+            // Player loses bet
 
         }
     }
