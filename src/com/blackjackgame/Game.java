@@ -35,10 +35,6 @@ public class Game {
         }
     }
 
-    public void gameFlow(){
-
-    }
-
     public void deal(){
         int score;
         if(player.getBank() == 0){
@@ -61,41 +57,40 @@ public class Game {
             else if(action == "stand") {
                 player.stand();
                 playerTurn = false;
-                break;
-            }
-        }
-
-        while(!playerTurn){
-            String action = Console.getPlayerChoice();
-            if(action == "hit"){
-                //player.hit();
-                dealer.hit();
-                dealer.getScore();
-            }
-            else if(action == "stand") {
-                player.stand();
-                playerTurn = true;
+                dealerTurn = true;
                 break;
             }
 
-            if(dealer.getScore() < 17){
-                dealer.hit();
+            if(player.getScore() > BLACKJACK){
+                System.out.println("PLAYER BUST! Player loses bet of " + player.getBet());
             }
 
-            if(dealer.getScore() > 17){
-                dealer.stand();
-                playerTurn = true;
-                break;
+            if(player.getScore() == BLACKJACK){
+                player.addWinnings();
             }
+
         }
 
-        if(player.getScore() > BLACKJACK){
-            System.out.println("PLAYER BUST! Player loses bet of " + player.getBet());
+        while(dealerTurn && dealer.getScore() < 17) {
+            //String action = Console.getPlayerChoice();
+
+            dealer.hit();
+            dealer.getScore();
         }
-        else if(dealer.getScore() > BLACKJACK){
+
+        if(dealer.getScore() > BLACKJACK){
             System.out.println("DEALER BUSTS! Player wins " + player.addWinnings());
         }
 
+        if(dealer.getScore() == BLACKJACK){
+            // player loses bet
+        }
+
+        dealer.stand();
+        dealerTurn = false;
+
+        compareHands();
+        startGame();
         //deal();
 
     }
@@ -124,6 +119,9 @@ public class Game {
         else if(dealerScore > playerScore){
             // Player loses bet
             System.out.println("Dealer wins! Player loses bet!");
+        }
+        else{
+            push();
         }
     }
 }
