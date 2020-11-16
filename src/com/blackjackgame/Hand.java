@@ -15,9 +15,13 @@ public class Hand {
         this.hand = new ArrayList<Card>();
     }
 
+    public void addCard(Card dealCard){
+        hand.add(dealCard);
+    }
+
     public Integer getScore(){
         for(var card : hand){
-            score = card.getValue();
+            score += card.getValue();
         }
 
         return score;

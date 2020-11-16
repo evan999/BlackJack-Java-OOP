@@ -18,9 +18,21 @@ public class Console {
     }
 
     static public String getPlayerChoice(){
+        System.out.println("Deal? Y or N: " );
+        String choice = scanner.nextLine();
+        return choice;
+    }
+
+    static public String getPlayerAction(){
         System.out.println("Enter your action (hit or stand): ");
         String action = scanner.nextLine();
         return action;
+    }
+
+    static public int getPlayerBet(){
+        System.out.println("Place your bet: ");
+        int bet = scanner.nextInt();
+        return bet;
     }
 
 

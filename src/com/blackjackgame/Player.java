@@ -7,22 +7,26 @@ import java.util.Scanner;
 
 public class Player implements Actions {
     private String name;
-    //private int score;
+    private int score;
     private int bet;
     private int bank;
-//    private List<Card> hand;
+    //private Hand hand;
+    private List<Card> hand;
+    Card card;
     private boolean bust = false;
     private boolean stand = false;
+    private boolean firstTurn = true;
 
     public Player(String name, int score, int bet, int bank){
         this.name = name;
-        //this.score = 0;
+        this.score = 0;
         this.bet = 100;
         //this.hand = new ArrayList<>();
         this.bank = bank;
     }
 
-    public void hit(Card card){
+    @Override
+    public void hit(){
         // Draw one card face up
         // Add card to hand.
         // Add to score
@@ -32,9 +36,6 @@ public class Player implements Actions {
             value = 10;
         }
         score += value;
-        if(score > 21){
-            bust = true;
-        }
     }
 
     public int stand(){
@@ -86,7 +87,7 @@ public class Player implements Actions {
     }
 
     public void reset(){
-        score = 0;
+        //score = 0;
         hand = Collections.emptyList();
     }
 
