@@ -6,8 +6,6 @@ import java.util.List;
 public class Hand {
     private List<Card> hand;
     private Player player;
-    private Card card;
-    private Deck deck;
     private int score;
 
     public Hand(Player player){
@@ -25,6 +23,10 @@ public class Hand {
         }
 
         return score;
+    }
+
+    public void displayHand(){
+
     }
 
     public Player getPlayer(){

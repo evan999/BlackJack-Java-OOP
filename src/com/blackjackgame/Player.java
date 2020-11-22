@@ -12,7 +12,6 @@ public class Player implements Actions {
     private int bank;
     //private Hand hand;
     private List<Card> hand;
-    Card card;
     private boolean bust = false;
     private boolean stand = false;
     private boolean firstTurn = true;
@@ -25,8 +24,8 @@ public class Player implements Actions {
         this.bank = bank;
     }
 
-    @Override
-    public void hit(){
+    //@Override
+    public void hit(Card card){
         // Draw one card face up
         // Add card to hand.
         // Add to score
@@ -55,14 +54,16 @@ public class Player implements Actions {
         //int initialBet = 100;
         //Scanner scanner = new Scanner(System.in);
 
-        if(amount >= bank){
-            System.out.println("Not enough chips in bank");
+        if(amount > bank){
+            System.out.println("Not enough chips in bank.");
+            return 0;
         }
 
-        bet += amount;
+        bet = amount;
         bank -= bet;
 
         // Player can choose to add more chips or go "all in".
+        System.out.println("Bank: " + bank);
         return bet;
     }
 
@@ -89,6 +90,7 @@ public class Player implements Actions {
     public void reset(){
         //score = 0;
         hand = Collections.emptyList();
+        bet = 0;
     }
 
     public int getScore(){

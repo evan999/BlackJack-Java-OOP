@@ -51,7 +51,7 @@ public class Game {
 
             if(action == "hit"){
                 //player.hit();
-                player.hit();
+                //player.hit();
                 player.getScore();
             }
             else if(action == "stand") {
@@ -74,7 +74,7 @@ public class Game {
         while(dealerTurn && dealer.getScore() < 17) {
             //String action = Console.getPlayerChoice();
 
-            dealer.hit();
+            //dealer.hit();
             dealer.getScore();
         }
 

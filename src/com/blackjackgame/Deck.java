@@ -35,12 +35,14 @@ public class Deck {
     }
 
 
+
     public void displayDeck(){
         for(Card card : cardDeck){
             System.out.println(card.toString());
         }
     }
 
+    /*
     @Override
     public String toString() {
         return "Deck = " + cardDeck.toString();
@@ -57,4 +59,6 @@ public class Deck {
     public void getCard(int position){
         cardDeck.get(position);
     }
+
+    */
 }
