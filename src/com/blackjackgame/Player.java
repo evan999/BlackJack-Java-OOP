@@ -10,6 +10,7 @@ public class Player implements Actions {
     private int score;
     private int bet;
     private int bank;
+    private Deck deck;
     //private Hand hand;
     private List<Card> hand;
     private boolean bust = false;
@@ -25,16 +26,18 @@ public class Player implements Actions {
     }
 
     //@Override
-    public void hit(Card card){
+    public void hit(Deck deck){
         // Draw one card face up
         // Add card to hand.
         // Add to score
-        hand.add(card);
+        hand.add(deck.drawCard());
+        /*
         int value = card.getValue();
         if(value > 10){
             value = 10;
         }
         score += value;
+        */
     }
 
     public int stand(){

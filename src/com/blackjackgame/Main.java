@@ -16,5 +16,7 @@ public class Main {
 
         Player player = new Player("Evan", 0, 0, 300);
         System.out.println(player.placeBet(300));
+
+        player.hit()
     }
 }

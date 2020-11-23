@@ -10,6 +10,7 @@ public class Deck {
     //private final static String[] SUITS = {"\u3898", ""};
     private final static String[] SUITS = {"DIAMONDS", "HEARTS", "CLUBS", "SPADES"};
     private final static int[] VALUES = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
+    private boolean isEmpty = false;
 
     public Deck(){
         cardDeck = new ArrayList<>();
@@ -26,7 +27,6 @@ public class Deck {
     // TODO: Adding jokers.
 
     public void shuffle() {
-        // TODO: Fisher-Yates algorithm for shuffling deck.
         Collections.shuffle(cardDeck);
     }
 
@@ -34,7 +34,19 @@ public class Deck {
         return cardDeck.remove(cardDeck.size() - 1);
     }
 
+    /*
+    public Card drawTwoCards(){
+        return cardDeck.remove(cardDeck.size() - 2);
+    }
+    */
 
+    public boolean isEmpty(){
+        if(cardDeck.size() < 1){
+            isEmpty = true;
+        }
+
+        return isEmpty;
+    }
 
     public void displayDeck(){
         for(Card card : cardDeck){

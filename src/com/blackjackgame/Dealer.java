@@ -20,9 +20,11 @@ public class Dealer implements Actions{
     }
 
     @Override
-    public void hit(Card card){
-        score += card.getValue();
+    public void hit(Deck deck){
+        hand.add(deck.drawCard());
+        //score += card.getValue();
     }
+
 
     @Override
     public int stand(){
