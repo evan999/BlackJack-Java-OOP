@@ -19,6 +19,10 @@ public class Dealer implements Actions{
         this.score = 0;
     }
 
+    public void deal(){
+        // Deal two cards to each player at the start of a round.
+    }
+
     @Override
     public void hit(Deck deck){
         hand.add(deck.drawCard());
