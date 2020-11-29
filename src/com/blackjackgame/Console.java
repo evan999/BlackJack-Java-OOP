@@ -11,11 +11,13 @@ public class Console {
     }
 
     // Display either the player's or dealer's hand.
+    /*
     static public void displayHand(List<Card> hand){
         for (var card : hand){
             System.out.println(card.toString());
         }
     }
+    */
 
     static public String getPlayerChoice(){
         System.out.println("Deal? Y or N: " );
