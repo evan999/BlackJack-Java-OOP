@@ -34,6 +34,10 @@ public class Deck {
         return cardDeck.remove(cardDeck.size() - 1);
     }
 
+    public List<Card> deal(){
+        
+    }
+
     /*
     public Card drawTwoCards(){
         return cardDeck.remove(cardDeck.size() - 2);
