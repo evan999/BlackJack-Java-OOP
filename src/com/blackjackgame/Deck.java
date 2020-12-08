@@ -34,10 +34,6 @@ public class Deck {
         return cardDeck.remove(cardDeck.size() - 1);
     }
 
-    public List<Card> deal(){
-        
-    }
-
     /*
     public Card drawTwoCards(){
         return cardDeck.remove(cardDeck.size() - 2);
@@ -45,7 +41,7 @@ public class Deck {
     */
 
     public boolean isEmpty(){
-        if(cardDeck.size() < 1){
+        if(cardDeck.size() == 0){
             isEmpty = true;
         }
 
@@ -64,13 +60,6 @@ public class Deck {
         return "Deck = " + cardDeck.toString();
     }
 
-    public void addCard(Card card){
-        cardDeck.add(card);
-    }
-
-    public Card removeCard(int position){
-        return cardDeck.remove(position);
-    }
 
     public void getCard(int position){
         cardDeck.get(position);

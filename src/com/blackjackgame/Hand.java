@@ -4,22 +4,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Hand {
-    private List<Card> hand;
+    private List<Card> hand = new ArrayList<>();
     private Player player;
     private int score;
+    private boolean hasAce;
+    private Actor actor;
 
-    public Hand(Player player){
-        this.player = player;
-        this.hand = new ArrayList<Card>();
+    public Hand(Actor actor){
+        this.actor = actor;
+       // this.hand = new ArrayList<Card>();
     }
 
-    /*
+    public Actor getActor(){
+        return actor;
+    }
+
+    public int handCount() {
+        return hand.size();
+    }
+
     public void addCard(Card dealCard){
         hand.add(dealCard);
     }
-    */
 
-    public Integer getScore(){
+    public Card removeCard(int index){
+        return hand.remove(index);
+    }
+
+
+    public int getScore(){
         for(var card : hand){
             score += card.getValue();
         }

@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Dealer implements Actions{
     private int score;
-    private int bet; // needed for dealer?
+    //private int bet; // needed for dealer?
     //private Deck deck;
     //private Hand hand;
     private List<Card> hand;
@@ -43,6 +43,6 @@ public class Dealer implements Actions{
     public void reset(){
         //score = 0;
         hand = Collections.emptyList();
-        bet = 0;
+        //bet = 0;
     }
 }

@@ -10,7 +10,6 @@ public class Player implements Actions {
     private int score;
     private int bet;
     private int bank;
-    private Deck deck;
     //private Hand hand;
     private List<Card> hand;
     private boolean bust = false;
@@ -65,7 +64,6 @@ public class Player implements Actions {
         bet = amount;
         bank -= bet;
 
-        // Player can choose to add more chips or go "all in".
         System.out.println("Bank: " + bank);
         return bet;
     }
@@ -84,10 +82,11 @@ public class Player implements Actions {
         return bust;
     }
 
-    public void bust(int score){
+    public boolean bust(int score){
         if(score > 21){
-            bust = true;
+            return true;
         }
+        return false;
     }
 
     public void reset(){
